@@ -59,7 +59,7 @@ class UserActivity : AppCompatActivity() {
     private fun clickRecyclerview() {
         adapterUser.clickItem={
             val intent=Intent(this, ProfileActivity::class.java)
-            intent.putExtra("ID",it.login)
+            intent.putExtra("LOGIN",it.login)
             startActivity(intent)
         }
     }

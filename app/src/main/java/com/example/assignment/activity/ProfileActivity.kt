@@ -27,7 +27,7 @@ class ProfileActivity : AppCompatActivity() {
         val viewModeProfileUserFactory=ViewModeProfileUserlFactory(Database.getDataBaseUser(this))
         viewModelProfileUser=ViewModelProvider(this,viewModeProfileUserFactory)[ViewModelProfileUser::class.java]
         val intent=intent
-        login= intent.getStringExtra("ID")
+        login= intent.getStringExtra("LOGIN")
         viewModelProfileUser.getProfileUser(login!!)
         binding.refreshLayoutProfile.setOnRefreshListener {
             binding.layoutProfile.visibility=View.INVISIBLE
@@ -78,7 +78,11 @@ class ProfileActivity : AppCompatActivity() {
         Glide.with(this).load(profileUser.avatar_url).into(binding.imgAvatar)
         binding.txtUserName.text=profileUser.name
         binding.txtLocation.text=profileUser.location
-        /*binding.txtBio.text=profileUser.bio.toString()*/
+        binding.txtBio.text=profileUser.bio.toString()
+        if (binding.txtBio.text=="null"){
+            binding.txtBio.visibility=View.INVISIBLE
+        }else
+            binding.txtBio.visibility=View.VISIBLE
         binding.txtNumberPublicRepo.text=profileUser.public_repos.toString()
         binding.txtNumberFollowers.text=profileUser.followers.toString()
         binding.txtNumberFollowing.text=profileUser.following.toString()
