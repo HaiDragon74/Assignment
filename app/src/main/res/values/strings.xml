@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Assignment</string>
+    <string name="login">Login</string>
+    <string name="html_uri">html_uri</string>
+    <string name="user_List">User List</string>
+    <string name="profile">Profile</string>
+    <string name="userName">username</string>
+    <string name="location">location</string>
+    <string name="about">About</string>
+    <string name="bio">bio</string>
+    <string name="stats">Stats</string>
+    <string name="number">number</string>
+    <string name="publicRepo">PUBLIC REPO</string>
+    <string name="followers">FOLLOWERS</string>
+    <string name="following">FOLLOWING</string>
+</resources>
